@@ -126,7 +126,7 @@
   border-radius: 8px;
 }
 
-/* Only show unit price in card */
+/* Unit price in product card */
 .unit-price {
   font-size: 0.95rem;
   font-weight: 600;
