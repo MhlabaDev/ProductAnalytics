@@ -28,7 +28,7 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip,
 /// Base URL for backend API calls (connected to custom local server).
 /// Used for product and sales endpoints.
 ///</summary>
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://localhost:5050";
 
 
 function ProductDisplay() {
@@ -238,7 +238,7 @@ function ProductDisplay() {
                 <div className="analytics-cards">
                   <div className="analytics-card">
                     <h3>Unit Price</h3>
-                    <p>${selectedProduct.salePrice?.toFixed(2) ?? "0.00"}</p>
+                    <p>R{selectedProduct.salePrice?.toFixed(2) ?? "0.00"}</p>
                   </div>
                   <div className="analytics-card">
                     <h3>Total Sold</h3>
@@ -246,7 +246,7 @@ function ProductDisplay() {
                   </div>
                   <div className="analytics-card">
                     <h3>Total Revenue</h3>
-                    <p>${selectedProduct.totalRevenue?.toFixed(2) ?? 0}</p>
+                    <p>R{selectedProduct.totalRevenue?.toFixed(2) ?? 0}</p>
                   </div>
                 </div>
 

@@ -1,49 +1,47 @@
-
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
+
 const app = express();
-const PORT = 5000;
+
+// Use port 5050 to avoid Windows HTTP.sys conflict
+const PORT = process.env.PORT || 5050;
 
 const BASE_URL = "https://singularsystems-tech-assessment-sales-api2.azurewebsites.net";
 
-///<summary>
-/// Allow requests from React frontend
-///</summary>
+// Allow requests from React frontend
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
 
-app.use(cors({ origin: "http://localhost:3000" }));
-
-   ///<summary>
-    /// Fetch all products .
-    ///</summary>
+// Fetch all products
 app.get("/products", async (req, res) => {
   try {
     const response = await axios.get(`${BASE_URL}/products`);
     res.json(response.data);
   } catch (err) {
-    console.error(err.message);
+    console.error("Error fetching products:", err.message);
     res.status(500).send("Error fetching products");
   }
 });
 
-    ///<summary>
-    /// Fetch all products .
-    ///</summary>
+// Fetch product sales
 app.get("/product-sales", async (req, res) => {
   try {
-    const { Id } = req.query; 
+    const { Id } = req.query;
     if (!Id) return res.status(400).send("Missing product Id");
 
-      ///<summary>
-    /// Forward Id to the real API
-    ///</summary>
-   
     const response = await axios.get(`${BASE_URL}/product-sales?Id=${Id}`);
     res.json(response.data);
   } catch (err) {
-    console.error(err.message);
+    console.error("Error fetching product sales:", err.message);
     res.status(500).send("Error fetching product sales");
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server
+app.listen(PORT, () => {
+  console.log(` Server running on http://localhost:${PORT}`);
+});

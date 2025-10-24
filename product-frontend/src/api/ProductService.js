@@ -3,7 +3,7 @@ import axios from "axios";
 ///<summary>
 /// Base URL of the backend API server used for fetching product and sales data.
 ///</summary>
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://localhost:5050";
 
 ///<summary>
 /// Fetch all products and enrich each product with analytics data (totalQty and totalRevenue).

@@ -13,7 +13,7 @@ const ProductCard = ({ product, onCardClick }) => {
       <div className="product-info">
         <h2 className="product-title">{product.description || "Unnamed Product"}</h2>
         <span className="product-category">{product.category || "No Category"}</span>
-        <p className="unit-price">Unit Price: ${product.salePrice?.toFixed(2) ?? "0.00"}</p>
+        <p className="unit-price">Unit Price: R{product.salePrice?.toFixed(2) ?? "0.00"}</p>
       </div>
     </div>
   );
