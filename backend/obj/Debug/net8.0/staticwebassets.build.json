@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZpLUilGNUH7n3AZ2HzAGd6XOe8P1ljHX4NCgLt3NEQE=",
+  "Source": "ProductAnalytics.Api",
+  "BasePath": "_content/ProductAnalytics.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
