@@ -139,28 +139,6 @@ The backend provides the following endpoints:
 * `GET /products` - Retrieves all products from the external API
 * `GET /product-sales?Id={productId}` - Retrieves all sales for a specific product
 
-### ASP.NET Core Backend Structure
-
-```
-backend/
-├── Controllers/          # API controllers
-│   └── ProductController.cs
-├── DTOs/                 # Data Transfer Objects
-│   ├── ProductDto.cs
-│   └── ProductSalesDto.cs
-├── Interfaces/           # Repository interfaces
-│   └── IProductRepository.cs
-├── Models/               # Domain models
-│   ├── Product.cs
-│   └── ProductSale.cs
-├── Repositories/         # Repository implementations
-│   └── ProductRepository.cs
-├── Properties/           # Launch settings
-│   └── launchSettings.json
-├── Program.cs            # Application entry point
-├── appsettings.json     # Configuration
-└── ProductAnalytics.Api.csproj
-```
 
 ### Configuration
 
@@ -182,15 +160,7 @@ dotnet restore
 dotnet run
 ```
 
-**Using Visual Studio:**
-1. Open the solution/project in Visual Studio
-2. Press F5 or click "Run"
-3. The API will start and open Swagger UI in your browser
 
-**Using Visual Studio Code:**
-1. Open the `backend` folder in VS Code
-2. Press F5 or use the Run and Debug panel
-3. Select the ".NET Core Launch" configuration
 
 ### Troubleshooting
 
